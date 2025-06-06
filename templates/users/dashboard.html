@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ user.first_name }} {{ user.last_name }}</h2>
+<img src="{{ user.userprofile.avatar.url }}" width="100" height="100"><br>
+<p><strong>Email:</strong> {{ user.email }}</p>
+<p><strong>Phone:</strong> {{ user.userprofile.phone }}</p>
+<p><strong>Country:</strong> {{ user.userprofile.country }}</p>
+<p><strong>Gender:</strong> {{ user.userprofile.get_gender_display }}</p>
+<p><strong>Address:</strong> {{ user.userprofile.address }}</p>
+<p><strong>DOB:</strong> {{ user.userprofile.dob }}</p>
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
