@@ -1,4 +1,5 @@
 {
+    "version": 2,
     "builds": [{
         "src": "smart_hub/wsgi.py",
         "use": "@vercel/python",
@@ -18,5 +19,9 @@
             "src": "/(.*)",
             "dest": "smart_hub/wsgi.py"
         }
-    ]
+    ],
+    "env": {
+    "DJANGO_SETTINGS_MODULE": "smart_hub.settings", 
+    "PYTHON_VERSION": "3.9" 
+  }
 }
